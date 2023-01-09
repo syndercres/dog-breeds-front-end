@@ -4,7 +4,7 @@ import VotingPage from "./components/VotingPage";
 function App(): JSX.Element {
   return (
     <>
-    <h1>{greet("World")}</h1>
+    <h1>{greet("Dog Lovers!")}</h1>
     <VotingPage />
     </>)
 }

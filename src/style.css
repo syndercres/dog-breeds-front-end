@@ -1,0 +1,10 @@
+
+.voting-page {
+    display:flex;
+}
+/* dog imgs cropped to be of the same size */
+.vote-img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+}
