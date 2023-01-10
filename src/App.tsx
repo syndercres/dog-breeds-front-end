@@ -8,7 +8,8 @@ function App(): JSX.Element {
       <h1>{greet("Dog Lovers!")}</h1>
       <VotingPage />
       <HighScore />
-    </>)
+    </>
+  );
 }
 
 export default App;

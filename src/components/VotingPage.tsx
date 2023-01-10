@@ -15,6 +15,7 @@ export default function VotingPage(): JSX.Element {
   const [votedImg, setVotedImg] = useState<string>("");
   const [reload, setReload] = useState<boolean>(false);
   const [userVotes, setUserVotes] = useState<number>(0);
+  console.log(votedImg);
 
   const width = 200;
 
