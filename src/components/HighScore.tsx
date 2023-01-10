@@ -14,30 +14,33 @@ export default function HighScore(): JSX.Element {
   const getVotes = async () => {
     try {
       const response = await axios.get(BackendURL + "/votes");
-      setAllVotes(response.data);
+      setAllVotes(response.data.rows);
+      // console.log(response.data.rows)
     } catch (error) {
       console.error(error);
-      alert("Failed to get votes from backend");
     }
   };
+  console.log(allVotes);
   return (
-    <>
+    <div className="leaderboard-section">
       <h2>This is the high scores section</h2>
-      <button onClick={() => getVotes()}>🔄</button>
-      <table>
-        <tr>
-          <th>Breed</th>
-          <th>Votes</th>
+      <button className="refresh-button" onClick={() => getVotes()}>
+        🔄
+      </button>
+      <table className="votes-table">
+        <tr className="table-header">
+          <th className="table-column">Breed</th>
+          <th className="table-column">Votes</th>
         </tr>
         {allVotes.map((dog) => {
           return (
-            <tr key={dog.id}>
-              <td>{dog.breed}</td>
-              <td>{dog.votes}</td>
+            <tr key={dog.id} className="table-row-body">
+              <td className="table-row">{dog.breed}</td>
+              <td className="table-row">{dog.likes}</td>
             </tr>
           );
         })}
       </table>
-    </>
+    </div>
   );
 }
