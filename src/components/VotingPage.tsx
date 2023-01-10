@@ -14,10 +14,8 @@ const dogPicURL = "https://dog.ceo/api/breeds/image/random";
 export default function VotingPage(): JSX.Element {
   const [imgOne, setImgOne] = useState<string | null>(null);
   const [imgTwo, setImgTwo] = useState<string | null>(null);
-  const [votedImg, setVotedImg] = useState<string>("");
   const [reload, setReload] = useState<boolean>(false);
   const [userVotes, setUserVotes] = useState<number>(0);
-  console.log(votedImg);
 
   const width = 200;
 
@@ -33,17 +31,13 @@ export default function VotingPage(): JSX.Element {
   }, [reload]);
 
   const handleVote = (imageLink: string) => {
-    const dogName = modifyDogLink(imageLink);
-    console.log(dogName);
-    setVotedImg(dogName);
-    console.log("the voted image is", votedImg);
-    postVotes(votedImg);
+    postVotes(modifyDogLink(imageLink));
     // call the POST function here!
     // postVote(votedImg)
     // this makes the page reload when the LIKE-BTN is clicked
     setReload(!reload);
     setUserVotes((prev) => prev + 1);
-    setVotedImg("");
+    //setVotedImg("");
   };
 
   const postVotes = async (name: string) => {
