@@ -1,6 +1,8 @@
 // import React from "react";
 import { useState, useEffect } from "react";
+import { BackendURL } from "../utils/BackendURL";
 import modifyDogLink from "../utils/modifyImgLink";
+import axios from "axios"
 
 export interface DogVoteType {
   id: number;
@@ -12,7 +14,7 @@ const dogPicURL = "https://dog.ceo/api/breeds/image/random";
 export default function VotingPage(): JSX.Element {
   const [imgOne, setImgOne] = useState<string | null>(null);
   const [imgTwo, setImgTwo] = useState<string | null>(null);
-  const [votedImg, setVotedImg] = useState<string>("");
+  const [votedImg, setVotedImg] = useState<string>('');
   const [reload, setReload] = useState<boolean>(false);
   const [userVotes, setUserVotes] = useState<number>(0);
   console.log(votedImg);
@@ -31,15 +33,28 @@ export default function VotingPage(): JSX.Element {
   }, [reload]);
 
   const handleVote = (imageLink: string) => {
-    setVotedImg(modifyDogLink(imageLink));
+    const dogName= modifyDogLink(imageLink)
+    console.log(dogName)
+    setVotedImg(dogName)
+    console.log("the voted image is", votedImg)
+    postVotes(votedImg)
     // call the POST function here!
     // postVote(votedImg)
-
-    setVotedImg("");
     // this makes the page reload when the LIKE-BTN is clicked
     setReload(!reload);
     setUserVotes((prev) => prev + 1);
+    setVotedImg("")
   };
+
+  const postVotes = async(name: string)  => {
+    console.log("post vote is running")
+    try {
+      const response = await axios.post(BackendURL + "/votes", {breed: name})
+      console.log(response)
+    } catch (err) {
+      console.log("I am problem with post", err)
+    }
+  }
   return (
     <>
       {imgOne && imgTwo && (
