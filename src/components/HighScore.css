@@ -1,0 +1,46 @@
+
+.leaderboard-section{
+    background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
+    font-family: monospace;
+}
+
+h2 {
+    text-transform: Uppercase;
+    text-align: center;
+    font-size: 90px;
+    color:antiquewhite;
+}
+
+.votes-table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    background-color: #141E30;
+    border-radius: 15px;
+    font-size: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.55);
+
+}
+
+.table-header{
+    font-size: 60px;
+    color: antiquewhite;
+}
+
+
+
+.table-row-body{
+    background-color: #24243e; 
+    color: #343449;
+    transition: all;
+    transition-duration: 300ms;
+}
+
+.table-row-body:hover{
+    background-color: #5f5f7a;  
+}
+    
+
+    
+ 
+    
