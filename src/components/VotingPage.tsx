@@ -7,6 +7,9 @@ export interface dog {
   breed: string;
   votes: number;
 }
+const dogPicURL = "https://dog.ceo/api/breeds/image/random";
+
+const URL = process.env.NODE_ENV === "production" ? "https://breed-battle.onrender.com/" : "http://localhost:4000"
 
 export default function VotingPage(): JSX.Element {
   const [imgOne, setImgOne] = useState<string | null>(null);
@@ -14,7 +17,6 @@ export default function VotingPage(): JSX.Element {
   const [votedImg, setVotedImg] = useState<string>("");
   const [reload, setReload] = useState<boolean>(false);
 
-  const dogPicURL = "https://dog.ceo/api/breeds/image/random";
   const width = 200;
 
   useEffect(() => {
@@ -41,14 +43,14 @@ export default function VotingPage(): JSX.Element {
     <>
       {imgOne && imgTwo && (
         <div className="voting-page">
-            <div className="vote-container">
-                <img className="vote-img" src={imgOne} alt="" width={width} />
-                <button onClick={() => handleVote(imgOne)}>LIKE</button>
-            </div>
-            <div className="vote-container">
-                <img className="vote-img" src={imgTwo} alt="" width={width} />
-                <button onClick={() => handleVote(imgTwo)}>LIKE</button>
-            </div>
+          <div className="vote-container">
+            <img className="vote-img" src={imgOne} alt="" width={width} />
+            <button onClick={() => handleVote(imgOne)}>LIKE</button>
+          </div>
+          <div className="vote-container">
+            <img className="vote-img" src={imgTwo} alt="" width={width} />
+            <button onClick={() => handleVote(imgTwo)}>LIKE</button>
+          </div>
         </div>
       )}
     </>
