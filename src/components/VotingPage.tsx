@@ -14,12 +14,14 @@ const dogPicURL = "https://dog.ceo/api/breeds/image/random";
 export default function VotingPage(): JSX.Element {
   const [imgOne, setImgOne] = useState<string | null>(null);
   const [imgTwo, setImgTwo] = useState<string | null>(null);
-  const [reload, setReload] = useState<boolean>(false);
+  //const [reload, setReload] = useState<boolean>(false);
   const [userVotes, setUserVotes] = useState<number>(0);
 
-  const width = 200;
-
   useEffect(() => {
+    handleFetchDogs();
+  }, []);
+
+  const handleFetchDogs = () => {
     // fetching the first image
     fetch(dogPicURL)
       .then((res) => res.json())
@@ -28,16 +30,14 @@ export default function VotingPage(): JSX.Element {
     fetch(dogPicURL)
       .then((res) => res.json())
       .then((data) => setImgTwo(data.message));
-  }, [reload]);
+  };
 
   const handleVote = (imageLink: string) => {
     postVotes(modifyDogLink(imageLink));
-    // call the POST function here!
-    // postVote(votedImg)
     // this makes the page reload when the LIKE-BTN is clicked
-    setReload(!reload);
+    // setReload(!reload);
+    handleFetchDogs();
     setUserVotes((prev) => prev + 1);
-    //setVotedImg("");
   };
 
   const postVotes = async (name: string) => {
@@ -49,24 +49,25 @@ export default function VotingPage(): JSX.Element {
       console.log("I am problem with post", err);
     }
   };
+
   return (
     <>
       {imgOne && imgTwo && (
         <div className="voting-page">
           <div className="vote-container">
-            <img className="vote-img" src={imgOne} alt="" width={width} />
+            <img className="vote-img" src={imgOne} alt="" />
             <button className="like-button" onClick={() => handleVote(imgOne)}>
               LIKE
             </button>
           </div>
           <p className="or">OR</p>
           <div className="vote-container">
-            <img className="vote-img" src={imgTwo} alt="" width={width} />
+            <img className="vote-img" src={imgTwo} alt="" />
             <button className="like-button" onClick={() => handleVote(imgTwo)}>
               LIKE
             </button>
           </div>
-          <p className="vote-meter">You've casted {userVotes} votes!</p>
+          <p className="vote-meter">You've cast {userVotes} votes!</p>
           {userVotes === 0 && (
             <p className="vote-meter">Come on! cast your vote!</p>
           )}
