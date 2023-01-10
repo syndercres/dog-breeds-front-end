@@ -2,14 +2,12 @@
 import { useState, useEffect } from "react";
 import modifyDogLink from "../utils/modifyImgLink";
 
-export interface dog {
+export interface DogVoteType {
   id: number;
   breed: string;
   votes: number;
 }
 const dogPicURL = "https://dog.ceo/api/breeds/image/random";
-
-const URL = process.env.NODE_ENV === "production" ? "https://breed-battle.onrender.com/" : "http://localhost:4000"
 
 export default function VotingPage(): JSX.Element {
   const [imgOne, setImgOne] = useState<string | null>(null);
