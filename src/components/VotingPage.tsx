@@ -14,6 +14,7 @@ export default function VotingPage(): JSX.Element {
   const [imgTwo, setImgTwo] = useState<string | null>(null);
   const [votedImg, setVotedImg] = useState<string>("");
   const [reload, setReload] = useState<boolean>(false);
+  const [userVotes, setUserVotes] = useState<number>(0);
 
   const width = 200;
 
@@ -36,6 +37,7 @@ export default function VotingPage(): JSX.Element {
     setVotedImg("");
     // this makes the page reload when the LIKE-BTN is clicked
     setReload(!reload);
+    setUserVotes((prev) => prev + 1);
   };
   return (
     <>
@@ -45,10 +47,14 @@ export default function VotingPage(): JSX.Element {
             <img className="vote-img" src={imgOne} alt="" width={width} />
             <button onClick={() => handleVote(imgOne)}>LIKE</button>
           </div>
+          <p>OR</p>
           <div className="vote-container">
             <img className="vote-img" src={imgTwo} alt="" width={width} />
             <button onClick={() => handleVote(imgTwo)}>LIKE</button>
           </div>
+          <p>You've casted {userVotes} votes!</p>
+          {userVotes === 0 && <p>Come on! cast your vote!</p>}
+          {userVotes > 10 && <p>Wow you're on a supree!</p>}
         </div>
       )}
     </>
