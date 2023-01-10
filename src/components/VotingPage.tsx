@@ -9,12 +9,12 @@ export interface DogVoteType {
   breed: string;
   likes: number;
 }
+
 const dogPicURL = "https://dog.ceo/api/breeds/image/random";
 
 export default function VotingPage(): JSX.Element {
   const [imgOne, setImgOne] = useState<string | null>(null);
   const [imgTwo, setImgTwo] = useState<string | null>(null);
-  //const [reload, setReload] = useState<boolean>(false);
   const [userVotes, setUserVotes] = useState<number>(0);
 
   useEffect(() => {
@@ -34,8 +34,6 @@ export default function VotingPage(): JSX.Element {
 
   const handleVote = (imageLink: string) => {
     postVotes(modifyDogLink(imageLink));
-    // this makes the page reload when the LIKE-BTN is clicked
-    // setReload(!reload);
     handleFetchDogs();
     setUserVotes((prev) => prev + 1);
   };
