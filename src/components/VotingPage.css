@@ -1,0 +1,44 @@
+body{
+    font-family: 'Major Mono Display';
+}
+
+.voting-page{
+    background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
+    font-size: 40px;
+    border-radius: 15px;
+
+    color: antiquewhite;
+}
+
+.vote-container{
+    background-color: #24243e;
+    border-radius: 15px;
+    display: grid;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.55);
+   margin: 100px;
+}
+button{
+    background-color: #85859c;
+    border-radius: 15px;
+    margin-top: 10px;
+   padding:20px
+}
+
+.vote-img{
+    border-radius: 15px;
+    margin: 50px;
+    margin-bottom: 10px;
+
+}
+
+.vote-meter{
+    margin-top: 100px;
+}
+
+.or{
+    font-size: 100px;
+
+}
+
+
+

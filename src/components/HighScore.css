@@ -2,6 +2,9 @@
 .leaderboard-section{
     background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
     font-family: monospace;
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 20px;
 }
 
 h2 {
@@ -9,6 +12,7 @@ h2 {
     text-align: center;
     font-size: 90px;
     color:antiquewhite;
+    margin: 75px;
 }
 
 .votes-table{
@@ -21,6 +25,10 @@ h2 {
     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.55);
 
 }
+.table-column{
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
 .table-header{
     font-size: 60px;
@@ -31,7 +39,7 @@ h2 {
 
 .table-row-body{
     background-color: #24243e; 
-    color: #343449;
+    color: antiquewhite;
     transition: all;
     transition-duration: 300ms;
 }
