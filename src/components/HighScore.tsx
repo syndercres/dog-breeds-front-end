@@ -4,14 +4,16 @@ import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
 import "./HighScore.css";
 
+  //-----------------------------------------------------------------------------------------------HighScore function declaration
 export default function HighScore(): JSX.Element {
+  //-----------------------------------------------------------------------------------------------Defining useStates and useEffect
   const [allVotes, setAllVotes] = useState<DogVoteType[]>([]);
 
   useEffect(() => {
     getVotes();
   }, []);
 
-  //function to get all the votes from the backend database.
+  //-----------------------------------------------------------------------------------------------GET request to SERVER,gets all votes.
   const getVotes = async () => {
     try {
       const response = await axios.get(BackendURL + "/votes");
@@ -20,6 +22,8 @@ export default function HighScore(): JSX.Element {
       console.error(error);
     }
   };
+
+  //-----------------------------------------------------------------------------------------------JSX return
   return (
     <div className="leaderboard-section">
       <h2>This is the high scores section</h2>

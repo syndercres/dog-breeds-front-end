@@ -1,10 +1,10 @@
-// import React from "react";
 import { useState, useEffect } from "react";
 import { BackendURL } from "../utils/BackendURL";
 import modifyDogLink from "../utils/modifyImgLink";
 import axios from "axios";
 import "./VotingPage.css";
 
+//-----------------------------------------------------------------------------------------------Interface for DogVoteType
 export interface DogVoteType {
   id: number;
   breed: string;
@@ -12,14 +12,14 @@ export interface DogVoteType {
 }
 
 const dogPicURL = "https://dog.ceo/api/breeds/image/random";
-
+//-----------------------------------------------------------------------------------------------Defining useStates
 export default function VotingPage(): JSX.Element {
   const [imgOne, setImgOne] = useState<string | null>(null);
   const [imgTwo, setImgTwo] = useState<string | null>(null);
   const [prevImgOne, setPrevImgOne] = useState<string | undefined>(undefined);
   const [prevImgTwo, setPrevImgTwo] = useState<string | undefined>(undefined);
   const [userVotes, setUserVotes] = useState<number>(0);
-
+  //-----------------------------------------------------------------------------------------------Fetching images from dog API
   useEffect(() => {
     // fetching the first image
     fetch(dogPicURL)
@@ -44,7 +44,7 @@ export default function VotingPage(): JSX.Element {
       .then((res) => res.json())
       .then((data) => setPrevImgTwo(data.message));
   };
-
+  //-----------------------------------------------------------------------------------------------Handle for like button
   const handleVote = (imageLink: string) => {
     postVotes(modifyDogLink(imageLink));
     handleFetchDogs();
@@ -52,7 +52,7 @@ export default function VotingPage(): JSX.Element {
     prevImgTwo && setImgTwo(prevImgTwo);
     setUserVotes((prev) => prev + 1);
   };
-
+  //-----------------------------------------------------------------------------------------------Post request to SERVER
   const postVotes = async (name: string) => {
     try {
       await axios.post(BackendURL + "/votes", { breed: name });
@@ -60,7 +60,7 @@ export default function VotingPage(): JSX.Element {
       console.error("I am problem with post", err);
     }
   };
-
+  //-----------------------------------------------------------------------------------------------Return JSX Element
   return (
     <>
       {imgOne && imgTwo && (
