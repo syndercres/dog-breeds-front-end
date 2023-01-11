@@ -2,11 +2,14 @@ body {
   font-family: "Major Mono Display";
 }
 
+/*  center everything
+    instead of "OR" have to crossed dog-bones
+    preview images styleeee
+  */
 .voting-page {
   background: linear-gradient(to right, #24243e, #141e30, #0f0c29);
   font-size: 40px;
   border-radius: 15px;
-
   color: antiquewhite;
 }
 
@@ -17,18 +20,51 @@ body {
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2),
     5px 5px 10px rgba(0, 0, 0, 0.55);
   margin: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-button {
+
+.like-button {
   background-color: #85859c;
   border-radius: 15px;
   margin-top: 10px;
   padding: 20px;
+  cursor: pointer;
+}
+.like-button:hover {
+  background: black;
 }
 
+.dog-imgs {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
 .vote-img {
   border-radius: 15px;
   margin: 50px;
+  margin-bottom: 40px;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-style: groove;
+  border-color: #7575ab;
+  grid-column: 1 / span 8;
+  grid-row: 1;
+  margin-top: 15%;
+  z-index: 1;
+}
+
+.vote-img-prev {
+  border-radius: 15px;
+  margin: 50px;
   margin-bottom: 10px;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  grid-column: 4 / -1;
+  grid-row: 1;
 }
 
 .vote-meter {

@@ -24,7 +24,7 @@ export default function HighScore(): JSX.Element {
   console.log(allVotes);
   return (
     <div className="leaderboard-section">
-      <h2>This is the high scores section</h2>
+      <h2>Leaderboard</h2>
       <button className="refresh-button" onClick={() => getVotes()}>
         🔄
       </button>
