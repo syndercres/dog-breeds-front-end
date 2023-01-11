@@ -27,9 +27,11 @@ export default function HighScore(): JSX.Element {
   return (
     <div className="leaderboard-section">
       <h2>Leaderboard</h2>
-      <button className="refresh-button" onClick={() => getVotes()}>
-        🔄
-      </button>
+      <div className="refresh-button-div">
+        <button className="refresh-button" onClick={() => getVotes()}>
+          🔄
+        </button>
+      </div>
       <table className="votes-table">
         <tr className="table-header">
           <th className="table-column">Breed</th>
