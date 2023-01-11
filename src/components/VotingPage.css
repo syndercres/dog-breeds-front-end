@@ -2,10 +2,6 @@ body {
   font-family: "Major Mono Display";
 }
 
-/*  center everything
-    instead of "OR" have to crossed dog-bones
-    preview images styleeee
-  */
 .voting-page {
   background: linear-gradient(to right, #24243e, #141e30, #0f0c29);
   font-size: 40px;
@@ -79,6 +75,7 @@ body {
   grid-row: 1;
   margin-top: 15%;
   z-index: 1;
+  user-select: none;
 }
 
 .vote-img-prev {
@@ -90,6 +87,7 @@ body {
   object-fit: cover;
   grid-column: 4 / -1;
   grid-row: 1;
+  user-select: none;
 }
 
 .vote-meter {
@@ -102,6 +100,7 @@ body {
   width: 180px;
   height: 180px;
   animation: rotating-imgZ 5s linear infinite;
+  user-select: none;
 }
 
 @keyframes rotating-imgZ {

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
+import loadingBtn from "../images/loading.png";
 import "./HighScore.css";
 
 //-----------------------------------------------------------------------------------------------HighScore function declaration
@@ -28,9 +29,12 @@ export default function HighScore(): JSX.Element {
     <div className="leaderboard-section">
       <h2>Leaderboard</h2>
       <div className="refresh-button-div">
-        <button className="refresh-button" onClick={() => getVotes()}>
-          🔄
-        </button>
+        <img
+          className="refresh-button-img"
+          src={loadingBtn}
+          onClick={() => getVotes()}
+          alt=""
+        />
       </div>
       <table className="votes-table">
         <tr className="table-header">
