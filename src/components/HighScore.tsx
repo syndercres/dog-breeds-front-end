@@ -16,12 +16,10 @@ export default function HighScore(): JSX.Element {
     try {
       const response = await axios.get(BackendURL + "/votes");
       setAllVotes(response.data.rows);
-      // console.log(response.data.rows)
     } catch (error) {
       console.error(error);
     }
   };
-  console.log(allVotes);
   return (
     <div className="leaderboard-section">
       <h2>This is the high scores section</h2>

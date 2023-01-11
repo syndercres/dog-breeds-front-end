@@ -54,12 +54,10 @@ export default function VotingPage(): JSX.Element {
   };
 
   const postVotes = async (name: string) => {
-    console.log("post vote is running");
     try {
-      const response = await axios.post(BackendURL + "/votes", { breed: name });
-      console.log(response);
+      await axios.post(BackendURL + "/votes", { breed: name });
     } catch (err) {
-      console.log("I am problem with post", err);
+      console.error("I am problem with post", err);
     }
   };
 
