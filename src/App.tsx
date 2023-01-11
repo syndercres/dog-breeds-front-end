@@ -6,7 +6,7 @@ import "./App.css";
 function App(): JSX.Element {
   return (
     <>
-      <h1>{greet("Dog Lovers!")}</h1>
+      <h1>{greet("Dog Lovers!")} Let's start this breed-battle</h1>
       <VotingPage />
       <HighScore />
     </>
