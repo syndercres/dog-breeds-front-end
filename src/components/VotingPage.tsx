@@ -35,6 +35,12 @@ export default function VotingPage(): JSX.Element {
     handleFetchDogs();
   }, []);
 
+  const dogAudio = new Audio("../utils/dog.mp3");
+
+  const playAudio = () => {
+    dogAudio.play();
+  };
+
   const handleFetchDogs = () => {
     // fetching the first image
     fetch(dogPicURL)
@@ -47,6 +53,7 @@ export default function VotingPage(): JSX.Element {
   };
   //-----------------------------------------------------------------------------------------------Handle for like button
   const handleVote = (imageLink: string) => {
+    playAudio();
     postVotes(modifyDogLink(imageLink));
     handleFetchDogs();
     prevImgOne && setImgOne(prevImgOne);
