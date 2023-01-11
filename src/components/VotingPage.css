@@ -15,6 +15,19 @@ body {
   flex-direction: column;
 }
 
+.vote-section {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.vote-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
 .vote-container {
   background-color: #24243e;
   border-radius: 15px;
@@ -29,15 +42,22 @@ body {
 }
 
 .like-button {
-  background-color: #85859c;
   border-radius: 15px;
   margin-top: 10px;
   padding: 20px;
   cursor: pointer;
+  background: url("../images/like-btn_Default.png") no-repeat;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .like-button:hover {
-  background: black;
+  background: url("../images/like-btn_On-hover.png") no-repeat;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
 }
 
 .dog-imgs {
@@ -73,9 +93,23 @@ body {
 }
 
 .vote-meter {
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
 .or {
-  font-size: 100px;
+  padding-top: 250px;
+  width: 180px;
+  height: 180px;
+  animation: rotating-imgZ 5s linear infinite;
+}
+
+@keyframes rotating-imgZ {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
 }

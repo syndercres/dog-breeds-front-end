@@ -3,6 +3,7 @@ import { BackendURL } from "../utils/BackendURL";
 import modifyDogLink from "../utils/modifyImgLink";
 import axios from "axios";
 import "./VotingPage.css";
+import bones from "../images/bones.png";
 
 //-----------------------------------------------------------------------------------------------Interface for DogVoteType
 export interface DogVoteType {
@@ -71,34 +72,30 @@ export default function VotingPage(): JSX.Element {
                 <img className="vote-img" src={imgOne} alt="" />
                 <img className="vote-img-prev" src={prevImgOne} alt="" />
               </div>
-              <button
-                className="like-button"
-                onClick={() => handleVote(imgOne)}
-              >
-                LIKE
-              </button>
+              <div className="like-button" onClick={() => handleVote(imgOne)}>
+                {/* <img src={LikeImgDefault} alt=""></img> */}
+              </div>
             </div>
-            <p className="or">OR</p>
+            <img className="or" src={bones} alt=""></img>
             <div className="vote-container">
               <div className="dog-imgs">
                 <img className="vote-img" src={imgTwo} alt="" />
                 <img className="vote-img-prev" src={prevImgTwo} alt="" />
               </div>
-              <button
-                className="like-button"
-                onClick={() => handleVote(imgTwo)}
-              >
-                LIKE
-              </button>
+              <div className="like-button" onClick={() => handleVote(imgTwo)}>
+                {/* <img src={LikeImgDefault} alt=""></img> */}
+              </div>
             </div>
           </div>
-          <p className="vote-meter">You've cast {userVotes} votes!</p>
-          {userVotes === 0 && (
-            <p className="vote-meter">Come on! cast your vote!</p>
-          )}
-          {userVotes > 10 && (
-            <p className="vote-meter">Wow you're on a supree!</p>
-          )}
+          <div className="vote-text">
+            <p className="vote-meter">You've cast {userVotes} votes!</p>
+            {userVotes === 0 && (
+              <p className="vote-meter">|Come on! cast your vote!</p>
+            )}
+            {userVotes > 10 && (
+              <p className="vote-meter">Wow you're on a supree!</p>
+            )}
+          </div>
         </div>
       )}
     </>
