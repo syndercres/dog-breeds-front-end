@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
+import "./HighScore.css";
 
 export default function HighScore(): JSX.Element {
   const [allVotes, setAllVotes] = useState<DogVoteType[]>([]);

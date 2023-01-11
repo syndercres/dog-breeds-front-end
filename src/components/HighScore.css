@@ -1,54 +1,46 @@
-
-.leaderboard-section{
-    background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
-    font-family: monospace;
-    border-radius: 20px;
-    padding: 50px;
-    margin-top: 20px;
+.leaderboard-section {
+  background: linear-gradient(to right, #24243e, #141e30, #0f0c29);
+  font-family: monospace;
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 20px;
 }
 
 h2 {
-    text-transform: Uppercase;
-    text-align: center;
-    font-size: 90px;
-    color:antiquewhite;
-    margin: 75px;
+  text-transform: Uppercase;
+  text-align: center;
+  font-size: 90px;
+  color: antiquewhite;
+  margin: 75px;
 }
 
-.votes-table{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    background-color: #141E30;
-    border-radius: 15px;
-    font-size: 40px;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.55);
-
+.votes-table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  background-color: #141e30;
+  border-radius: 15px;
+  font-size: 40px;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2),
+    5px 5px 10px rgba(0, 0, 0, 0.55);
 }
-.table-column{
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.table-header{
-    font-size: 60px;
-    color: antiquewhite;
+.table-column {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-
-
-.table-row-body{
-    background-color: #24243e; 
-    color: antiquewhite;
-    transition: all;
-    transition-duration: 300ms;
+.table-header {
+  font-size: 60px;
+  color: antiquewhite;
 }
 
-.table-row-body:hover{
-    background-color: #5f5f7a;  
+.table-row-body {
+  background-color: #24243e;
+  color: antiquewhite;
+  transition: all;
+  transition-duration: 300ms;
 }
-    
 
-    
- 
-    
+.table-row-body:hover {
+  background-color: #5f5f7a;
+}

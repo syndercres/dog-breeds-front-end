@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { BackendURL } from "../utils/BackendURL";
 import modifyDogLink from "../utils/modifyImgLink";
 import axios from "axios";
+import "./VotingPage.css";
 
 export interface DogVoteType {
   id: number;
