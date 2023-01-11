@@ -11,6 +11,8 @@ body {
   font-size: 40px;
   border-radius: 15px;
   color: antiquewhite;
+  display: flex;
+  flex-direction: column;
 }
 
 .vote-container {
@@ -23,6 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .like-button {
@@ -32,6 +35,7 @@ body {
   padding: 20px;
   cursor: pointer;
 }
+
 .like-button:hover {
   background: black;
 }
@@ -41,6 +45,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   position: relative;
 }
+
 .vote-img {
   border-radius: 15px;
   margin: 50px;

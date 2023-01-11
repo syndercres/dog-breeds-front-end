@@ -1,9 +1,7 @@
-.voting-page {
-  display: flex;
-}
 h1 {
   text-align: center;
 }
+
 /* dog imgs cropped to be of the same size */
 .vote-img {
   width: 350px;

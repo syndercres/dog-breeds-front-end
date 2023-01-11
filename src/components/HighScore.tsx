@@ -4,7 +4,7 @@ import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
 import "./HighScore.css";
 
-  //-----------------------------------------------------------------------------------------------HighScore function declaration
+//-----------------------------------------------------------------------------------------------HighScore function declaration
 export default function HighScore(): JSX.Element {
   //-----------------------------------------------------------------------------------------------Defining useStates and useEffect
   const [allVotes, setAllVotes] = useState<DogVoteType[]>([]);
