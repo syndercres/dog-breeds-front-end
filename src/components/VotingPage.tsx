@@ -65,24 +65,32 @@ export default function VotingPage(): JSX.Element {
     <>
       {imgOne && imgTwo && (
         <div className="voting-page">
-          <div className="vote-container">
-            <div className="dog-imgs">
-              <img className="vote-img" src={imgOne} alt="" />
-              <img className="vote-img-prev" src={prevImgOne} alt="" />
+          <div className="vote-section">
+            <div className="vote-container">
+              <div className="dog-imgs">
+                <img className="vote-img" src={imgOne} alt="" />
+                <img className="vote-img-prev" src={prevImgOne} alt="" />
+              </div>
+              <button
+                className="like-button"
+                onClick={() => handleVote(imgOne)}
+              >
+                LIKE
+              </button>
             </div>
-            <button className="like-button" onClick={() => handleVote(imgOne)}>
-              LIKE
-            </button>
-          </div>
-          <p className="or">OR</p>
-          <div className="vote-container">
-            <div className="dog-imgs">
-              <img className="vote-img" src={imgTwo} alt="" />
-              <img className="vote-img-prev" src={prevImgTwo} alt="" />
+            <p className="or">OR</p>
+            <div className="vote-container">
+              <div className="dog-imgs">
+                <img className="vote-img" src={imgTwo} alt="" />
+                <img className="vote-img-prev" src={prevImgTwo} alt="" />
+              </div>
+              <button
+                className="like-button"
+                onClick={() => handleVote(imgTwo)}
+              >
+                LIKE
+              </button>
             </div>
-            <button className="like-button" onClick={() => handleVote(imgTwo)}>
-              LIKE
-            </button>
           </div>
           <p className="vote-meter">You've cast {userVotes} votes!</p>
           {userVotes === 0 && (
