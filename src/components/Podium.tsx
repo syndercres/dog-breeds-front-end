@@ -1,4 +1,5 @@
 import PodiumSpot from "./PodiumSpot";
+import "./podium.css";
 
 interface podiumProps {
   positions: string[];

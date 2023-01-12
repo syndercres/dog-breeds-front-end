@@ -28,6 +28,8 @@ export default function PodiumSpot(props: PodiumSpotProps): JSX.Element {
     <div className="podium-spot-container">
       <img
         className="podium-spot-img"
+        width={"200px"}
+        height={"200px"}
         src={dogImg}
         onClick={() => handleSetNewImg()}
         alt=""
