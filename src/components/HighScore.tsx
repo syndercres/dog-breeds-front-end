@@ -1,4 +1,4 @@
-import axios, { all } from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
@@ -19,7 +19,7 @@ export default function HighScore(props: HighScoreProps): JSX.Element {
 
   useEffect(() => {
     getPodium();
-  }, [allVotes]);
+  });
 
   const getPodium = () => {
     allVotes.length > 0 &&
