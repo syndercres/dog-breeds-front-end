@@ -1,23 +1,34 @@
-import axios from "axios";
+import axios, { all } from "axios";
 import { useEffect, useState } from "react";
 import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
 import loadingBtn from "../images/loading.png";
 import "./HighScore.css";
-import DogPodium from "./Podium";
 
 interface HighScoreProps {
-   setPositions: React.Dispatch<React.SetStateAction<string[]>>
+  setPositions: React.Dispatch<React.SetStateAction<string[]>>;
 }
 //-----------------------------------------------------------------------------------------------HighScore function declaration
 export default function HighScore(props: HighScoreProps): JSX.Element {
   //-----------------------------------------------------------------------------------------------Defining useStates and useEffect
-  const [allVotes, setAllVotes] = useState<DogVoteType[] >([]);
+  const [allVotes, setAllVotes] = useState<DogVoteType[]>([]);
 
   useEffect(() => {
     getVotes();
-    allVotes.length > 0 && props.setPositions([allVotes[0].breed, allVotes[1].breed, allVotes[2].breed])
   }, []);
+
+  useEffect(() => {
+    getPodium();
+  }, [allVotes]);
+
+  const getPodium = () => {
+    allVotes.length > 0 &&
+      props.setPositions([
+        allVotes[0].breed,
+        allVotes[1].breed,
+        allVotes[2].breed,
+      ]);
+  };
 
   //-----------------------------------------------------------------------------------------------GET request to SERVER,gets all votes.
   const getVotes = async () => {
