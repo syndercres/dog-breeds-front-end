@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
 import loadingBtn from "../images/loading.png";
@@ -12,33 +12,28 @@ interface HighScoreProps {
 export default function HighScore(props: HighScoreProps): JSX.Element {
   //-----------------------------------------------------------------------------------------------Defining useStates and useEffect
   const [allVotes, setAllVotes] = useState<DogVoteType[]>([]);
+  const setPositions = props.setPositions;
 
-  useEffect(() => {
-    getVotes();
-  }, []);
-
-  useEffect(() => {
-    getPodium();
-  });
-
-  const getPodium = () => {
+  const getPodium = useCallback(() => {
     allVotes.length > 0 &&
-      props.setPositions([
-        allVotes[0].breed,
-        allVotes[1].breed,
-        allVotes[2].breed,
-      ]);
-  };
+      setPositions([allVotes[0].breed, allVotes[1].breed, allVotes[2].breed]);
+  }, [allVotes, setPositions]);
 
   //-----------------------------------------------------------------------------------------------GET request to SERVER,gets all votes.
-  const getVotes = async () => {
+  const getVotes = useCallback(async () => {
     try {
       const response = await axios.get(BackendURL + "/votes");
       setAllVotes(response.data.rows);
+      getPodium();
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [getPodium]);
+
+  //---------------------------------------useEffect
+  useEffect(() => {
+    getVotes().then(() => getPodium());
+  }, [getPodium, getVotes]);
 
   //-----------------------------------------------------------------------------------------------JSX return
   return (
