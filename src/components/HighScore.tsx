@@ -14,26 +14,27 @@ export default function HighScore(props: HighScoreProps): JSX.Element {
   const [allVotes, setAllVotes] = useState<DogVoteType[]>([]);
   const setPositions = props.setPositions;
 
-  const getPodium = useCallback(() => {
-    allVotes.length > 0 &&
-      setPositions([allVotes[0].breed, allVotes[1].breed, allVotes[2].breed]);
-  }, [allVotes, setPositions]);
-
   //-----------------------------------------------------------------------------------------------GET request to SERVER,gets all votes.
   const getVotes = useCallback(async () => {
     try {
       const response = await axios.get(BackendURL + "/votes");
-      setAllVotes(response.data.rows);
-      getPodium();
+      const newAllVotes: DogVoteType[] = response.data.rows;
+      setAllVotes(newAllVotes);
+      newAllVotes.length > 0 &&
+        setPositions([
+          newAllVotes[0].breed,
+          newAllVotes[1].breed,
+          newAllVotes[2].breed,
+        ]);
     } catch (error) {
       console.error(error);
     }
-  }, [getPodium]);
+  }, [setPositions]);
 
   //---------------------------------------useEffect
   useEffect(() => {
-    getVotes().then(() => getPodium());
-  }, [getPodium, getVotes]);
+    getVotes();
+  }, [getVotes]);
 
   //-----------------------------------------------------------------------------------------------JSX return
   return (

@@ -25,14 +25,14 @@ export default function PodiumSpot(props: PodiumSpotProps): JSX.Element {
     fetch(link).then((res) => console.log(res));
   };
   return (
-    <div>
+    <div className="podium-spot-container">
       <img
-        className="podium-img"
+        className="podium-spot-img"
         src={dogImg}
         onClick={() => handleSetNewImg()}
         alt=""
       />
-      <p>{dogName}</p>
+      <p className="podium-spot-txt">{dogName}</p>
     </div>
   );
 }

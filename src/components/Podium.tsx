@@ -5,14 +5,14 @@ interface podiumProps {
 }
 
 function DogPodium(props: podiumProps): JSX.Element {
-  console.log(props.positions);
-
   return (
-    <div>
-      <h3> The Winners Are...</h3>
-      {props.positions.map((dog, i) => (
-        <PodiumSpot dogName={dog} key={i} />
-      ))}
+    <div className="podium-container">
+      <h3 className="podium-title"> The Winners Are...</h3>
+      <div className="podium-spot-container">
+        {props.positions.map((dog, i) => (
+          <PodiumSpot dogName={dog} key={i} />
+        ))}
+      </div>
     </div>
   );
 }
