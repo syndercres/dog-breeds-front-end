@@ -2,6 +2,7 @@ import { greet } from "./utils/greet";
 import VotingPage from "./components/VotingPage";
 import HighScore from "./components/HighScore";
 import DogPodium from "./components/Podium";
+import Footer from "./components/Footer";
 import { useState } from "react";
 import "./App.css";
 
@@ -13,6 +14,7 @@ function App(): JSX.Element {
       <VotingPage />
       <DogPodium positions={positions} />
       <HighScore setPositions={setPositions} />
+      <Footer />
     </>
   );
 }

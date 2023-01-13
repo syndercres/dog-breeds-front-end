@@ -1,0 +1,36 @@
+.linkedin-icon {
+  width: 30px;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0px 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(241, 241, 241);
+  margin-top: 15px;
+}
+.api-txt {
+  margin-top: 5px;
+  color: black;
+}
+.api-txt > a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.linkedin-container {
+  margin-right: 10px;
+}
+.linkedin-btn {
+  padding-right: 15px;
+  display: inline-flex;
+  color: rgb(29, 97, 156);
+  font-size: 18px;
+}
+.linkedin-btn > span {
+  padding-top: 5%;
+}
+.linkedin-container > a {
+  text-decoration: none;
+}
