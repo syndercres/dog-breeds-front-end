@@ -1,5 +1,6 @@
 import PodiumSpot from "./PodiumSpot";
 import "./podium.css";
+import podium from "../images/podium.png";
 
 interface podiumProps {
   positions: string[];
@@ -7,17 +8,17 @@ interface podiumProps {
 
 function DogPodium(props: podiumProps): JSX.Element {
   return (
-    <div className="podium-container">
-      <div className="podium-places-container">
-        <h3 className="podium-title"> The Winners Are...</h3>
+    <>
+      <h3 className="podium-title"> Top 3 Breeds</h3>
+      <div className="podium-container">
         <div className="podium-spot-container">
           {props.positions.map((dog, i) => (
-            <PodiumSpot dogName={dog} key={i} />
+            <PodiumSpot dogName={dog} key={i} indexNumber={i} />
           ))}
         </div>
-        <img src="" alt="" />
+        <img src={podium} alt="" className="podium-picture" />
       </div>
-    </div>
+    </>
   );
 }
 

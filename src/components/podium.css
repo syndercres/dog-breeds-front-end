@@ -12,9 +12,51 @@
 
 .podium-spot-img {
   object-fit: cover;
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
 }
 
 .podium-title {
   font-size: 50px;
   text-align: center;
+}
+
+.podium-picture {
+  width: 100%;
+  object-fit: cover;
+  grid-column: 1 / span 8;
+  grid-row: 1;
+  z-index: 1;
+  margin-top: 450px;
+}
+
+.podium-spot-container {
+  display: grid;
+  grid-template-areas: "place1 place2 place3";
+  justify-items: center;
+  grid-column: 4 / -1;
+  grid-row: 1;
+}
+
+.podium-spot-txt {
+  text-align: center;
+}
+
+.place0 {
+  grid-area: place2;
+  margin-top: 100px;
+  margin-right: 50px;
+}
+
+.place1 {
+  grid-area: place1;
+  margin-top: 100px;
+  margin-right: 50px;
+}
+
+.place2 {
+  grid-area: place3;
+  margin-top: 100px;
+  margin-right: 50px;
 }

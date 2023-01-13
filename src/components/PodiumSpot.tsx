@@ -3,10 +3,11 @@ import generateLink from "../utils/generateLink";
 
 interface PodiumSpotProps {
   dogName: string;
+  indexNumber: number;
 }
 
 export default function PodiumSpot(props: PodiumSpotProps): JSX.Element {
-  const { dogName } = props;
+  const { dogName, indexNumber } = props;
   const [dogImg, setDogImg] = useState<string>("");
 
   useEffect(() => {
@@ -25,16 +26,14 @@ export default function PodiumSpot(props: PodiumSpotProps): JSX.Element {
     fetch(link).then((res) => console.log(res));
   };
   return (
-    <div className="podium-spot-container">
+    <div className={"place" + indexNumber.toString()}>
+      <p className="podium-spot-txt">{dogName}</p>
       <img
         className="podium-spot-img"
-        width={"200px"}
-        height={"200px"}
         src={dogImg}
         onClick={() => handleSetNewImg()}
         alt=""
       />
-      <p className="podium-spot-txt">{dogName}</p>
     </div>
   );
 }
