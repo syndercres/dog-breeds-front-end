@@ -2,7 +2,6 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { DogVoteType } from "../components/VotingPage";
 import { BackendURL } from "../utils/BackendURL";
-import loadingBtn from "../images/refresh-btn.png";
 import "./HighScore.css";
 
 interface HighScoreProps {
