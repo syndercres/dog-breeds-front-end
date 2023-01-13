@@ -3,7 +3,7 @@ body {
 }
 
 .voting-page {
-  background: linear-gradient(to right, #24243e, #141e30, #0f0c29);
+  background: linear-gradient(to right, #3e2424, #301414, #290c0c);
   font-size: 40px;
   border-radius: 15px;
   color: antiquewhite;
@@ -25,7 +25,7 @@ body {
 }
 
 .vote-container {
-  background-color: #24243e;
+  background-color: #3e2424;
   border-radius: 15px;
   display: grid;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2),
@@ -70,7 +70,7 @@ body {
   width: 200px;
   object-fit: cover;
   border-style: groove;
-  border-color: #7575ab;
+  border-color: #ab7575;
   grid-column: 1 / span 8;
   grid-row: 1;
   margin-top: 15%;
