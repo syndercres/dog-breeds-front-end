@@ -5,11 +5,15 @@
   padding: 50px;
   margin-top: 20px;
   color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
 }
 
 .podium-spot-img {
   object-fit: cover;
 }
+
 .podium-title {
   font-size: 50px;
   text-align: center;
