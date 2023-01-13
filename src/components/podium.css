@@ -1,3 +1,16 @@
+.podium-container {
+  background: linear-gradient(to right, #3e2424, #301414, #290c0c);
+  font-family: monospace;
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 20px;
+  color: white;
+}
+
 .podium-spot-img {
   object-fit: cover;
+}
+.podium-title {
+  font-size: 50px;
+  text-align: center;
 }
