@@ -3,7 +3,7 @@ import linkedinIcon from "../images/linkedinIcon.png";
 export default function Footer(): JSX.Element {
   return (
     <>
-      <p>
+      <p className="api-txt">
         API: <a href="https://dog.ceo/">DogCEO</a>
       </p>
       <div className="linkedin-container">
