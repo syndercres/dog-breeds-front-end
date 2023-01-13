@@ -40,14 +40,7 @@ export default function HighScore(props: HighScoreProps): JSX.Element {
   return (
     <div className="leaderboard-section">
       <h2>Leaderboard</h2>
-      <div className="refresh-button-div">
-        <img
-          className="refresh-button-img"
-          src={loadingBtn}
-          onClick={() => getVotes()}
-          alt=""
-        />
-      </div>
+      <div className="refresh-button-div" onClick={() => getVotes()}></div>
       <table className="votes-table">
         <tr className="table-header">
           <th className="table-column">Breed</th>
